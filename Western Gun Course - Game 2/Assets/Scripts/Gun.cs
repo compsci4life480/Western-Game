@@ -20,6 +20,14 @@ public class Gun : MonoBehaviour
     public Vector3 upRecoil;
     Vector3 originalRotation;
 
+    private AudioSource gunshotSound;
+
+    private void Start()
+    {
+        gunshotSound = gameObject.GetComponent<AudioSource>();
+    }
+
+
     // Update is called once per frame
     void Update()
     {
@@ -35,6 +43,7 @@ public class Gun : MonoBehaviour
 
     void Shoot()
     {
+        gunshotSound.Play();
         //GameObject impactGO = new GameObject();
         muzzleFlash.Play();
         RaycastHit hit;

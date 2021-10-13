@@ -15,10 +15,18 @@ public class PlayerMovement : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
 
+    private AudioSource walkingSound;
+    bool isMoving;
 
-  
+
+
     Vector3 velocity;
     bool isGrounded;
+
+    private void Start()
+    {
+        walkingSound = gameObject.GetComponent<AudioSource>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -44,11 +52,16 @@ public class PlayerMovement : MonoBehaviour
         }
         controller.Move(move * speed * Time.deltaTime);
 
-        //jump
         if (Input.GetButtonDown("Jump") && isGrounded)
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+        Debug.Log("x is" + x + "z is" + z);
+        //walking sound play
+        if ((x != 0 || z != 0) && isGrounded && !walkingSound.isPlaying)
+            walkingSound.Play();
+        if (((x == 0 && z == 0) || !isGrounded))
+            walkingSound.Stop();
     }
 }
