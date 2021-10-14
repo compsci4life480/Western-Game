@@ -12,8 +12,8 @@ public class Gun : MonoBehaviour
 
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
-    public GameObject impactEffectGround;
-    public GameObject impactEffectObject;
+    //public GameObject impactEffectGround;
+    //public GameObject impactEffectObject;
 
     public float fireCooldown;
     float nextTimeToFire = 0f;
@@ -63,9 +63,9 @@ public class Gun : MonoBehaviour
                 hit.rigidbody.AddForce(-hit.normal * impactForce);
             }
 
-            impactGO = Instantiate(impactEffectObject, hit.point, Quaternion.LookRotation(hit.normal));
+            //impactGO = Instantiate(impactEffectObject, hit.point, Quaternion.LookRotation(hit.normal));
             
-            Destroy(impactGO, 2f);
+            //Destroy(impactGO);
         }
     }
     private void AddRecoil()
