@@ -6,6 +6,11 @@ public class Target : MonoBehaviour
 {
     public float health = 50f;
 
+    public void Start()
+    {
+        Invoke("Die", 5);
+    }
+
     public void TakeDamage(float amount)
     {
         health -= amount;

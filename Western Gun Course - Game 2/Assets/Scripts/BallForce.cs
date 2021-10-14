@@ -12,6 +12,7 @@ public class BallForce : MonoBehaviour
     {
         dir = target.transform.position - transform.position;
         dir = dir.normalized;
+        //Time.timeScale = 0.5f;
 
     }
 
