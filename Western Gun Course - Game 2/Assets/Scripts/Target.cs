@@ -8,7 +8,7 @@ public class Target : MonoBehaviour
 
     public void Start()
     {
-        Invoke("Die", 5);
+        //Invoke("Die", 5);
     }
 
     public void TakeDamage(float amount)
@@ -21,6 +21,6 @@ public class Target : MonoBehaviour
     }
     public void Die()
     {
-        Destroy(gameObject, 3f);
+        Destroy(gameObject);
     }
 }

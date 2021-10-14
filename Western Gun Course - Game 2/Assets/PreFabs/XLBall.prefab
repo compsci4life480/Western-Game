@@ -141,3 +141,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 8595837813741758261, guid: 356a9d3841ed3bd4eb3bff493138f283, type: 3}
   force: 50
+  velocity: 1

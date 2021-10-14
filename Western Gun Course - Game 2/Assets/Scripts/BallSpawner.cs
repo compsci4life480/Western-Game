@@ -19,7 +19,7 @@ public class BallSpawner : MonoBehaviour
     {
         if(Time.time >= nextTimeToSpawn)
         {
-            Instantiate(ball, transform.position, transform.rotation);
+            Instantiate(ball, new Vector3(Random.Range(transform.position.x - 10f, transform.position.x + 10f), transform.position.z, transform.position.z), transform.rotation);
             nextTimeToSpawn = Time.time + timeBetweenSpawn;
         }
     }

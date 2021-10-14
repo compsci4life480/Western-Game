@@ -17,7 +17,7 @@ public class SlowTime : MonoBehaviour
             timeOn = true;
         }else if(Input.GetKeyDown(KeyCode.T) && timeOn)
         {
-            Time.timeScale = timeModifier;
+            Time.timeScale = 1;
             timeOn = false;
         }
     }
