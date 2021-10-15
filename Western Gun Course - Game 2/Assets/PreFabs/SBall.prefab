@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2193179616969340650}
   m_Layer: 0
   m_Name: SBall
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,7 +93,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5805486357698581593}
   m_Material: {fileID: 13400000, guid: 195c1f8911bad804ea52ead6dd552e53, type: 2}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
