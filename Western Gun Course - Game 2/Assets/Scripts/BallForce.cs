@@ -13,6 +13,7 @@ public class BallForce : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("position is" + transform.position);
         dir = target.transform.position - transform.position;
         dir = dir.normalized;
         rb = gameObject.GetComponent<Rigidbody>();
@@ -24,8 +25,9 @@ public class BallForce : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.AddForce(dir * force);
         rb.velocity *= velocity;
+        rb.AddForce(dir * force);
+        //rb.velocity *= velocity;
 
     }
 }

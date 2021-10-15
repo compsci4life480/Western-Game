@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Gun : MonoBehaviour
 {
@@ -18,12 +19,19 @@ public class Gun : MonoBehaviour
     public float fireCooldown;
     float nextTimeToFire = 0f;
     public Vector3 upRecoil;
+
+    public Text score;
+    int scoreNumb = 0;
+
     Vector3 originalRotation;
+
+
 
     private AudioSource gunshotSound;
 
     private void Start()
     {
+        score.text = "0";
         gunshotSound = gameObject.GetComponent<AudioSource>();
     }
 
@@ -49,7 +57,7 @@ public class Gun : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
-            GameObject impactGO;
+            //GameObject impactGO;
             muzzleFlash.Play();
             Debug.Log(hit.transform.name);
             Target target = hit.transform.GetComponent<Target>();
@@ -61,6 +69,7 @@ public class Gun : MonoBehaviour
             if (hit.rigidbody != null)
             {
                 hit.rigidbody.AddForce(-hit.normal * impactForce);
+                UpdateScore();
             }
 
             //impactGO = Instantiate(impactEffectObject, hit.point, Quaternion.LookRotation(hit.normal));
@@ -76,5 +85,11 @@ public class Gun : MonoBehaviour
     private void StopRecoil()
     {
         transform.localEulerAngles = originalRotation;
+    }
+
+    private void UpdateScore()
+    {
+        scoreNumb++;
+        score.text = scoreNumb.ToString();
     }
 }

@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d92a6f7c7b38e479c7831cad68207a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 30
+  health: 10
 --- !u!54 &8685297287363499247
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -140,5 +140,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 8595837813741758261, guid: 356a9d3841ed3bd4eb3bff493138f283, type: 3}
-  force: 30
-  velocity: 0.85
+  force: 100
+  velocity: 0.95
