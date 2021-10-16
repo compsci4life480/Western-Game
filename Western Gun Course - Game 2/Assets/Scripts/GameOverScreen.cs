@@ -8,6 +8,10 @@ public class GameOverScreen : MonoBehaviour
 {
 
     public Text pointsText;
+    public void Start()
+    {
+        Setup(PlayerDeath.totalScore);
+    }
     public void Setup(double score)
     {
         gameObject.SetActive(true);

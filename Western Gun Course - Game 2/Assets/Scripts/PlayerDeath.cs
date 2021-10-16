@@ -10,6 +10,7 @@ public class PlayerDeath : MonoBehaviour
     CharacterController controller;
     public Text time;
     public Text score;
+    public static double totalScore;
     public GameOverScreen GameOverScreen;
     // Start is called before the first frame update
     void Start()
@@ -22,8 +23,11 @@ public class PlayerDeath : MonoBehaviour
     {
         //double.Parse(time.ToString()) + double.Parse(score.ToString())
         double s;
-        Double.TryParse(score.ToString(), out s);
-        GameOverScreen.Setup(s);
+        Double.TryParse(score.ToString() + time.ToString(), out s);
+        totalScore = s;
+        SceneManager.LoadScene("EndScreen");
+       // GameOverScreen.Setup(s);
+
         //SceneManager.LoadScene(sceneName: "default");
     }
 
