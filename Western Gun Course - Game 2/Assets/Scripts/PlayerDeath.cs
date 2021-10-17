@@ -8,10 +8,10 @@ using UnityEngine.UI;
 public class PlayerDeath : MonoBehaviour
 {
     CharacterController controller;
-    //public Text time;
+    public Text time;
     public Text score;
     public static double totalScore;
-    public GameOverScreen GameOverScreen;
+    //public GameOverScreen GameOverScreen;
     bool hasDied = false;
     // Start is called before the first frame update
     void Start()
@@ -21,10 +21,15 @@ public class PlayerDeath : MonoBehaviour
 
     void Update()
     {
-        if(transform.position.y < -30 && hasDied == false)
+        if(transform.position.y < -30 && hasDied == false || time.text == "0")
         {
             hasDied = true;
             Death();
+        }
+
+        if(score.text == "1")
+        {
+            Win();
         }
     }
 
@@ -36,6 +41,15 @@ public class PlayerDeath : MonoBehaviour
         totalScore = s;
         Cursor.lockState = CursorLockMode.Confined;
         SceneManager.LoadScene("EndScreen");
+    }
+    //This should prolly be in a separate script but for the sake of simplicity I'm putting it here
+    private void Win()
+    {
+        double s;
+        Double.TryParse(score.text, out s);
+        totalScore = s;
+        Cursor.lockState = CursorLockMode.Confined;
+        SceneManager.LoadScene("WinScreen");
     }
 
     private void OnTriggerEnter(Collider other)

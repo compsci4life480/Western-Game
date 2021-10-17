@@ -2,11 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
-public class GameOverScreen : MonoBehaviour
+public class WinScreen : MonoBehaviour
 {
-
     public Text pointsText;
     public void Start()
     {
@@ -14,13 +12,9 @@ public class GameOverScreen : MonoBehaviour
     }
     public void Setup(double score)
     {
-        gameObject.SetActive(true);
+        //gameObject.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         pointsText.text = "SCORE: " + score.ToString() + " / 42";
     }
 
-    public void RestartButton()
-    {
-        SceneManager.LoadScene("Playground");
-    }
 }

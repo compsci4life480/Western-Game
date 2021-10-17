@@ -69,11 +69,7 @@ public class Gun : MonoBehaviour
             {
                 hit.rigidbody.AddForce(-hit.normal * impactForce);
                 UpdateScore();
-            }
-
-            //impactGO = Instantiate(impactEffectObject, hit.point, Quaternion.LookRotation(hit.normal));
-            
-            //Destroy(impactGO);
+            };
         }
     }
     private void AddRecoil()
