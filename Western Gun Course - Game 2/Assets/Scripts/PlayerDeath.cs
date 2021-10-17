@@ -45,10 +45,7 @@ public class PlayerDeath : MonoBehaviour
     //This should prolly be in a separate script but for the sake of simplicity I'm putting it here
     private void Win()
     {
-        double s;
-        Double.TryParse(score.text, out s);
-        totalScore = s;
-        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene("WinScreen");
     }
 
