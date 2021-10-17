@@ -23,7 +23,6 @@ public class PlayerDeath : MonoBehaviour
     {
         if(transform.position.y < -30 && hasDied == false)
         {
-            Debug.Log("hi");
             hasDied = true;
             Death();
         }
@@ -32,14 +31,9 @@ public class PlayerDeath : MonoBehaviour
     //if death, switch to end screen with time and score displayed
     private void Death()
     {
-        //double.Parse(time.ToString()) + double.Parse(score.ToString())
         double s;
-        //double t;
         Double.TryParse(score.text, out s);
-        //Double.TryParse(time.text, out t);
-       // Debug.Log("TIME" + time.text);
         totalScore = s;
-        Debug.Log("Total Score is" + totalScore);
         SceneManager.LoadScene("EndScreen");
     }
 
