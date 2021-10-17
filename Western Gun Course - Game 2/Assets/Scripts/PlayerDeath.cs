@@ -8,14 +8,25 @@ using UnityEngine.UI;
 public class PlayerDeath : MonoBehaviour
 {
     CharacterController controller;
-    public Text time;
+    //public Text time;
     public Text score;
     public static double totalScore;
     public GameOverScreen GameOverScreen;
+    bool hasDied = false;
     // Start is called before the first frame update
     void Start()
     {
         controller = GetComponent<CharacterController>();
+    }
+
+    void Update()
+    {
+        if(transform.position.y < -30 && hasDied == false)
+        {
+            Debug.Log("hi");
+            hasDied = true;
+            Death();
+        }
     }
 
     //if death, switch to end screen with time and score displayed
@@ -23,17 +34,18 @@ public class PlayerDeath : MonoBehaviour
     {
         //double.Parse(time.ToString()) + double.Parse(score.ToString())
         double s;
-        Double.TryParse(score.ToString() + time.ToString(), out s);
+        //double t;
+        Double.TryParse(score.text, out s);
+        //Double.TryParse(time.text, out t);
+       // Debug.Log("TIME" + time.text);
         totalScore = s;
+        Debug.Log("Total Score is" + totalScore);
         SceneManager.LoadScene("EndScreen");
-       // GameOverScreen.Setup(s);
-
-        //SceneManager.LoadScene(sceneName: "default");
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Ball" || transform.position.y < 0)
+        if(other.gameObject.tag == "Ball")
         {
             Death();
         }
