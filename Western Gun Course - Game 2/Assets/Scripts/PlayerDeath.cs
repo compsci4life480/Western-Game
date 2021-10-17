@@ -34,6 +34,7 @@ public class PlayerDeath : MonoBehaviour
         double s;
         Double.TryParse(score.text, out s);
         totalScore = s;
+        Cursor.lockState = CursorLockMode.Confined;
         SceneManager.LoadScene("EndScreen");
     }
 
