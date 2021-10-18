@@ -10,12 +10,6 @@ public class BallSpawner : MonoBehaviour
     public float timeToStart;
     float nextTimeToSpawn = 0f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        //Instantiate(ball, transform.position, transform.rotation);
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -23,7 +17,7 @@ public class BallSpawner : MonoBehaviour
         {
             if (Time.time >= nextTimeToSpawn)
             {
-                Instantiate(ball, new Vector3(Random.Range(transform.position.x - 50f, transform.position.x + 50f), transform.position.z, transform.position.z), transform.rotation);
+                Instantiate(ball, new Vector3(Random.Range(transform.position.x - 30f, transform.position.x + 30f), transform.position.z, transform.position.z), transform.rotation);
                 nextTimeToSpawn = Time.time + timeBetweenSpawn;
             }
         }

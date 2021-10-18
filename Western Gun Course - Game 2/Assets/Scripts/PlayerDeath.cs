@@ -27,7 +27,7 @@ public class PlayerDeath : MonoBehaviour
             Death();
         }
 
-        if(score.text == "1")
+        if(score.text == "42")
         {
             Win();
         }
