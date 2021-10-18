@@ -7,17 +7,11 @@ using UnityEngine.UI;
 
 public class PlayerDeath : MonoBehaviour
 {
-    CharacterController controller;
     public Text time;
     public Text score;
     public static double totalScore;
-    //public GameOverScreen GameOverScreen;
     bool hasDied = false;
     // Start is called before the first frame update
-    void Start()
-    {
-        controller = GetComponent<CharacterController>();
-    }
 
     void Update()
     {
@@ -33,7 +27,6 @@ public class PlayerDeath : MonoBehaviour
         }
     }
 
-    //if death, switch to end screen with time and score displayed
     private void Death()
     {
         double s;
@@ -51,13 +44,6 @@ public class PlayerDeath : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Ball")
-        {
-            Death();
-        }
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.tag == "Ball")
         {
             Death();
         }

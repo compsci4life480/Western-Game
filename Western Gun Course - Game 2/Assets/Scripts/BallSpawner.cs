@@ -9,11 +9,6 @@ public class BallSpawner : MonoBehaviour
     public float timeBetweenSpawn;
     public float timeToStart;
     float nextTimeToSpawn = 0f;
-    private void Start()
-    {
-        Debug.Log("USTIME" + Time.unscaledTime);
-        Debug.Log("TIME" + Time.time);
-    }
     // Update is called once per frame
     void Update()
     {
