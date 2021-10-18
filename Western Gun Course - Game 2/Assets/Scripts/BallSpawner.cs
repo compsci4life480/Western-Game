@@ -13,7 +13,7 @@ public class BallSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.unscaledTime> timeToStart)
+        if (Time.unscaledTime > timeToStart)
         {
             if (Time.time >= nextTimeToSpawn)
             {
