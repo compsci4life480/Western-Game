@@ -48,7 +48,13 @@ public class PlayerDeath : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene("WinScreen");
     }
-
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Ball")
+        {
+            Death();
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Ball")

@@ -16,6 +16,7 @@ public class BallForce : MonoBehaviour
     {
        // dir = target.transform.localPosition - transform.position;
         targetPosition = GameObject.Find("First Person Player").transform.position;
+        targetPosition.y += 5;
         dir = targetPosition - transform.position;
         dir = dir.normalized;
         //Debug.Log(dir);
